@@ -12,7 +12,7 @@
     ],
     "developer": {
         "name": "Daniel García",
-        "website": "https://github.com/dani-garcia",
+        "website": "https://github.com/dani-garcia/vaultwarden",
         "donate_text": "", 
         "donate_link": ""
     },
@@ -25,32 +25,16 @@
     "support": "https://discord.gg/knqAbbBbeX",
     "website": "https://github.com/dani-garcia/vaultwarden",
     "container": {
-        "image": "vaultwarden/server:latest",
+        "image": "vaultwarden/server:1.24.0",
         "shell": "bash",
         "privileged": false,
         "network_model": "bridge",
         "web_ui": {
             "http": "80",
-            "path": "/admin"
+            "path": "/"
         },
-        "envs": [
-            {
-                "key": "ADMIN_TOKEN",
-                "value": "casaos",
-                "configurable": "basic",
-                "description": "Admin Authentication Token"
-            }
-        ],
-        "ports": [
-            {
-                "container": "80",
-                "host": "80",
-                "type": "tcp",
-                "allocation": "preferred",
-                "configurable": "advanced",
-                "description": "WebUI HTTP Port"
-            }
-        ],
+        "envs": [],
+        "ports": [],
         "volumes": [
             {
                 "container": "/data",
